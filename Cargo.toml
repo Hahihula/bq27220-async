@@ -1,0 +1,22 @@
+[package]
+name         = "bq27220-async"
+version      = "0.1.0"
+edition      = "2024"
+authors      = ["Petr Gadorek <hahihula@gmail.com>"]
+rust-version = "1.88"
+description  = "no_std async driver for the Texas Instruments BQ27220 battery fuel gauge"
+repository   = "https://github.com/Hahihula/bq27220-async"
+license      = "MIT OR Apache-2.0"
+keywords     = ["bq27220", "async", "battery", "embedded-hal", "no-std"]
+categories   = ["embedded", "no-std", "hardware-support"]
+
+[dependencies]
+embedded-hal-async = "1.0.0"
+defmt              = { version = "1.0", optional = true }
+
+[features]
+## Implement `defmt::Format` for `Status` and `StatusFlags`.
+defmt = ["dep:defmt"]
+
+[package.metadata.docs.rs]
+all-features = true
